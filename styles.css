@@ -73,3 +73,6 @@ h1, h2, .subtitle {
   border-top: 5px solid var(--blue);
 }
 
+img {
+  float: right;
+}
