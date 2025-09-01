@@ -20,21 +20,33 @@ h1, h2, .subtitle {
   text-align: center;
 }
 
+h3,
+.card > p {
+  margin: 0 0 1em 0;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  margin: 0 auto;
+  gap: 2em;
+  max-width: 1100px;
 }
 
 .card {
   border-radius: 8px;
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+  padding: 1.5em 2em;
 }
 
 .card::before {
   content: '';
   display: block;
   border-radius: 8px 8px 0 0;
+  position: relative;
+  top: -1.5em;
+  left: -2em;
+  width: calc(100% + 4em);
 }
 
 .card:nth-child(1) {
