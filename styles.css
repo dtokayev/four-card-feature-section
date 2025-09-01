@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
 :root {
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
@@ -12,17 +14,61 @@ body {
   margin: 0;
 }
 
+header {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 5.9em 0 3.9em 0;
+  color: var(--grey-500);
+}
+
 .content {
   min-height: 100vh;
+  background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  padding-bottom: 2em;
 }
 
 h1, h2, .subtitle {
   text-align: center;
 }
 
+.subtitle {
+  padding: 0 2em;
+}
+
+h1, h3 {
+  font-weight: 600;
+  color: var(--grey-500);
+}
+
+h1 {
+  font-size: clamp(1.3em, 7vw, 2.15em);
+  line-height: 1.2em;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: clamp(1.3em, 7vw, 2.16em);
+  margin: 0;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.4em;
+}
+
 h3,
 .card > p {
-  margin: 0 0 1em 0;
+  margin: 0 0 0.5em 0;
+}
+
+.card-text > p {
+  color: var(--grey-400);
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.6em;
 }
 
 .grid-container {
@@ -34,15 +80,17 @@ h3,
 }
 
 .card {
-  border-radius: 8px;
-  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 0.7em 1em rgba(0, 0, 0, 0.1);
   padding: 1.5em 2em;
+  background-color: var(--white);
+  min-height: 200px;
 }
 
 .card::before {
   content: '';
   display: block;
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 6px 0 0;
   position: relative;
   top: -1.5em;
   left: -2em;
@@ -70,21 +118,44 @@ h3,
 }
 
 .card:nth-child(1)::before {
-  border-top: 5px solid var(--cyan);
+  border-top: 4px solid var(--cyan);
 }
 
 .card:nth-child(2)::before {
-  border-top: 5px solid var(--red);
+  border-top: 4px solid var(--red);
 }
 
 .card:nth-child(3)::before {
-  border-top: 5px solid var(--orange);
+  border-top: 4px solid var(--orange);
 }
 
 .card:nth-child(4)::before {
-  border-top: 5px solid var(--blue);
+  border-top: 4px solid var(--blue);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 img {
-  float: right;
+  width: 64px;
+  place-self: flex-end;
+  padding-bottom: 1.5em;
+}
+
+@media only screen and (max-width: 1100px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card {
+    grid-column: 1 !important;
+    grid-row: unset !important;
+    max-width: 300px;
+    margin: 0 2em;
+  }
 }
